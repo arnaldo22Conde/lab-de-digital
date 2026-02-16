@@ -78,8 +78,12 @@ $C = \frac{1}{1.386 \times 47000 \times 1000}$
 $C \approx 15,nF$
 
 Por lo tanto, se selecciona un capacitor comercial cercano, como 15 nF.
+hola
 
 Verificación de la frecuencia en la simulación (LTspice)
+
+![Verificación de la frecuencia en la simulación (LTspice)](https://github.com/user-attachments/assets/5150c396-04e1-4fb4-8bd4-ee002d188c77)
+
 
 Para verificar la frecuencia en la simulación se mide el tiempo que tarda en repetirse la señal. Si se observan N ciclos dentro de un intervalo de tiempo $\Delta t$, la frecuencia se calcula como:
 
