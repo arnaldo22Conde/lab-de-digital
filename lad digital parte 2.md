@@ -95,6 +95,9 @@ Entonces la frecuencia es:
 
 $f = \frac{2}{0.0025} = 800,Hz$
 
+
+https://www.youtube.com/watch?v=_n8JR62jyOw
+
 Esto confirma el valor obtenido en la simulación.
 
 
