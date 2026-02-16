@@ -1,11 +1,14 @@
 # Generación y control de tiempos (temporización):
 
-Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
-Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
-Compare los resultados obtenidos y realice una comparativa de ambas implementaciones indicando las diferentes aplicaciones.
-Multivibrador astable con transistores (BJT)
-Ecuaciones del circuito (caso general)
+## Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
+## Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
+## Compare los resultados obtenidos y realice una comparativa de ambas implementaciones indicando las diferentes aplicaciones.
 
+# Desarrolo.
+## Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
+ 
+### Multivibrador astable con transistores (BJT)
+- Ecuaciones del circuito (caso general)
 El funcionamiento del multivibrador astable se basa en la carga y descarga de los capacitores a través de las resistencias de base. El tiempo de cada semiciclo se aproxima por:
 
 $t_1 = \ln(2),R_2C_1 \approx 0.693,R_2C_1$
@@ -27,6 +30,8 @@ Cuando el circuito es simétrico:
 $R_2 = R_3 = R$
 $C_1 = C_2 = C$
 
+donde $R_2 = R_3 = R$ son resistencias de carga y por lo geneneral son 100 veces mas grande que $R_1 = R_4 = R$ ya que esto granatiza el perfento funcionamiento de los bjt. 
+
 El período se simplifica a:
 
 $T = 2\ln(2),RC$
@@ -38,6 +43,7 @@ $f = \frac{1}{2\ln(2),RC}$
 Como $2\ln(2) \approx 1.386$, se usa comúnmente:
 
 $f = \frac{1}{1.386,RC}$
+
 
 Selección de la resistencia R1 (resistencia del LED / colector)
 
