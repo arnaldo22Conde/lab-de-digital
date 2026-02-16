@@ -96,3 +96,9 @@ Entonces la frecuencia es:
 $f = \frac{2}{0.0025} = 800,Hz$
 
 Esto confirma el valor obtenido en la simulación.
+
+
+
+
+modos biestable https://www.youtube.com/watch?v=4EfFQS2afb0
+modo monoestabl y astable https://www.youtube.com/watch?v=n15R_n_TshA
