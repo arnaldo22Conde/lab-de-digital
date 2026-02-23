@@ -287,6 +287,7 @@ Entonces la frecuencia es:
 $f = \frac{2}{0.0025} = 800,Hz$
 
 Este valor se compara con el valor teórico calculado y, si es necesario, se ajustan $R_A$, $R_B$ o $C$ para aproximarse a $1,kHz$.
+![Modo Astable](https://github.com/user-attachments/assets/15e50a47-47a8-42ef-b6c9-695ea032a3bc)
 
 
 modos biestable https://www.youtube.com/watch?v=4EfFQS2afb0
