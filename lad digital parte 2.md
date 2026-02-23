@@ -290,5 +290,129 @@ Este valor se compara con el valor teórico calculado y, si es necesario, se aju
 ![Modo Astable](https://github.com/user-attachments/assets/15e50a47-47a8-42ef-b6c9-695ea032a3bc)
 
 
+# 3. Comparación de resultados: Astable con transistores vs Astable con LM555
+-1) Diferencia en ecuaciones (modelo teórico)
+Astable con transistores (multivibrador)
+
+En el caso simétrico ($R_2=R_3=R$ y $C_1=C_2=C$):
+
+$f \approx \frac{1}{1.386RC}$
+
+En caso general:
+
+$f = \frac{1}{0.693(R_2C_1 + R_3C_2)}$
+
+Interpretación: la frecuencia depende de dos ramas RC (una por cada semiciclo). El duty se acerca a 50% si el circuito es simétrico.
+
+LM555 en modo astable
+
+Con resistencias $R_A$, $R_B$ y capacitor $C$:
+
+$f = \frac{1}{0.693(R_A + 2R_B)C} ;;; \approx \frac{1.44}{(R_A+2R_B)C}$
+
+Tiempos:
+
+$t_H = 0.693(R_A + R_B)C$
+
+$t_L = 0.693(R_B)C$
+
+Duty:
+
+$D = \frac{R_A + R_B}{R_A + 2R_B}$
+
+Interpretación: la frecuencia depende de una sola red RC, pero el duty queda condicionado por $R_A$ y $R_B$ (no queda exactamente 50% sin usar diodo u otra modificación).
+
+-2) Señal de salida (amplitud y forma de onda)
+Transistores
+
+Salidas típicas en colectores: 0 a $V_{CC}$ (aprox).
+
+Se observan picos/transitorios por el intercambio de carga en capacitores (normal).
+
+Se obtienen dos salidas complementarias (una alta cuando la otra está baja).
+
+LM555
+
+Salida en pin 3: onda cuadrada más “limpia” y estable.
+
+La amplitud se aproxima a 0–$V_{CC}$ dependiendo del tipo de 555 y la carga (bajo cargas fuertes puede no llegar perfecto a los extremos).
+
+En general es más fácil obtener una salida útil directa.
+
+-3) Estabilidad y precisión de frecuencia
+Transistores
+
+La frecuencia puede variar más por:
+
+variación de $\beta$ del transistor
+
+temperatura
+
+tolerancia de capacitores
+
+saturación y $V_{BE}$
+
+Resultado: más dispersión entre cálculo teórico y simulación/real.
+
+LM555
+
+La frecuencia suele ser más repetible porque el 555 tiene:
+
+comparadores internos con umbrales definidos (aprox $1/3V_{CC}$ y $2/3V_{CC}$)
+
+descarga controlada por el transistor interno del pin 7
+
+Resultado: más estabilidad y facilidad para ajustar a un valor objetivo.
+
+-4) Velocidad de reacción / conmutación
+Transistores
+
+La conmutación puede ser rápida, pero si el transistor entra en saturación profunda aparecen tiempos de almacenamiento de carga (puede ralentizar el apagado).
+
+A frecuencias moderadas como 1 kHz funciona sin problema.
+
+LM555
+
+Tiene etapas internas optimizadas para conmutar y descargar el capacitor.
+
+La conmutación es consistente y generalmente más rápida/estable que un montaje discreto básico.
+
+Conclusión práctica: para 1 kHz ambos funcionan bien, pero el 555 suele dar una respuesta más “controlada” y menos dependiente del transistor.
+
+-5) Complejidad del circuito y facilidad de diseño
+Transistores
+
+Más componentes: 2 transistores + 2 capacitores + varias resistencias.
+
+Muy útil para aprender realimentación y temporización RC.
+
+Ajustar frecuencia a veces requiere ensayo porque el modelo ideal no siempre coincide.
+
+LM555
+
+Menos componentes: 1 CI + 2 resistencias + 1 capacitor (astable típico).
+
+Diseño directo con fórmulas claras.
+
+Fácil de ajustar.
+
+-6) Consumo y eficiencia
+Transistores
+
+Dependiendo del diseño, puede consumir más (corrientes por ramas y saturación).
+
+Buen desempeño si se diseña con corrientes pequeñas.
+
+LM555
+
+Depende del tipo:
+
+555 bipolar consume más que CMOS
+
+555 CMOS consume mucho menos
+
+En general, para un montaje práctico el 555 es conveniente.
+
+
 modos biestable https://www.youtube.com/watch?v=4EfFQS2afb0
 modo monoestabl y astable https://www.youtube.com/watch?v=n15R_n_TshA
