@@ -111,6 +111,7 @@ Esto confirma el valor obtenido en la simulación.
 ## 2. Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
 Tiempo de activación del pulso
 
+### Modo Monoestable con Temporizador 555
 -El tiempo durante el cual la salida permanece activa está determinado por la constante de tiempo RC del circuito. Para el temporizador 555 en modo monoestable, el tiempo del pulso de salida se calcula mediante la expresión:
 
 $T = 1.1 R C$
@@ -150,6 +151,7 @@ Esto confirma que el tiempo de activación del modo monoestable depende únicame
 
 
 ![Modo monoestable](https://github.com/user-attachments/assets/86eefa70-a8c9-473d-bc64-1d2d19b52d30)
+link https://www.build-electronic-circuits.com/circuit-calculator-conversion/555-timer-calculator/
 
 
 
