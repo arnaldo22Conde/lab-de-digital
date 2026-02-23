@@ -1,11 +1,11 @@
 # Generación y control de tiempos (temporización):
 
-## Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
-## Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
-## Compare los resultados obtenidos y realice una comparativa de ambas implementaciones indicando las diferentes aplicaciones.
+## 1. Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
+## 2. Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
+## 3. Compare los resultados obtenidos y realice una comparativa de ambas implementaciones indicando las diferentes aplicaciones.
 
 # Desarrollo.
-## Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
+## 1. Estudie el oscilador astable basado en trasistores e implemente un oscilador que genere una salida entre 0 a 3.3 voltios o entre 0 a 5 voltios a una frecuencia de 1 KHz, puede usar una tecnología mosfet o bjt.
  
 ### Multivibrador astable con transistores (BJT)
 - Ecuaciones del circuito (caso general)
