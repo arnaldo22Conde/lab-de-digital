@@ -153,7 +153,7 @@ Esto confirma que el tiempo de activación del modo monoestable depende únicame
 ![Modo monoestable](https://github.com/user-attachments/assets/86eefa70-a8c9-473d-bc64-1d2d19b52d30)
 link https://www.build-electronic-circuits.com/circuit-calculator-conversion/555-timer-calculator/
 
-## B.Modo Biestable con Temporizador 555
+## B. Modo Biestable con Temporizador 555
 Introducción
 
 En este montaje se implementó el temporizador 555 en modo biestable. Este modo se caracteriza porque el circuito tiene dos estados estables: un estado alto y un estado bajo. La salida permanece en uno de estos estados hasta que una señal externa la cambie.
@@ -187,6 +187,106 @@ Si no se presiona ningún pulsador, el circuito mantiene su último estado.
 Esto demuestra que el temporizador 555 en modo biestable funciona como un sistema de memoria simple, capaz de almacenar un bit de información.
 
 ![Modo monoestable](https://github.com/user-attachments/assets/95d075a0-c790-41c2-a150-649f574ab60c)
+
+
+## Modo Astable con LM555 (1 kHz, 0–5 V)
+-Introducción al montaje
+
+En esta parte se implementó el temporizador LM555 en modo astable, el cual no tiene estados estables: la salida conmuta continuamente entre alto y bajo, generando una onda cuadrada. La frecuencia depende principalmente de los valores de dos resistencias y un capacitor.
+
+-Ecuaciones de frecuencia (LM555 astable)
+
+Para el LM555 en modo astable, el período total se define como la suma del tiempo alto y el tiempo bajo:
+
+$T = t_{H} + t_{L}$
+
+Donde:
+
+$t_H = 0.693 (R_A + R_B) C$
+
+$t_L = 0.693 (R_B) C$
+
+Entonces:
+
+$T = 0.693 (R_A + 2R_B) C$
+
+La frecuencia se calcula como:
+
+$f = \frac{1}{T}$
+
+Por lo tanto:
+
+$f = \frac{1}{0.693 (R_A + 2R_B) C}$
+
+-Una forma equivalente (muy usada) es:
+
+$f \approx \frac{1.44}{(R_A + 2R_B) C}$
+
+Selección del capacitor a partir de la frecuencia deseada (despeje de C)
+
+Si se requiere una frecuencia de $f = 1,kHz$, se despeja el capacitor desde:
+
+$f = \frac{1}{0.693 (R_A + 2R_B) C}$
+
+-Despejando:
+
+$C = \frac{1}{0.693 (R_A + 2R_B) f}$
+
+Consideración sobre el ciclo útil (duty cycle)
+
+El ciclo útil en el 555 depende de:
+
+$D = \frac{t_H}{T} = \frac{R_A + R_B}{R_A + 2R_B}$
+
+Para acercarse a $50%$ se busca que $R_A$ sea muy pequeño comparado con $R_B$. Una forma práctica es elegir:
+
+$R_B \approx 100 R_A$
+
+Esto hace que $R_A$ influya muy poco y el duty se acerque a $50%$ (aunque en un 555 típico sin diodo nunca queda exactamente 50%).
+
+-Ejemplo de diseño (1 kHz con 5 V)
+
+Se toma un ejemplo con:
+
+$R_A = 1,k\Omega$
+
+$R_B = 100,k\Omega$
+
+$f = 1000,Hz$
+
+-Se calcula:
+
+$C = \frac{1}{0.693 (R_A + 2R_B) f}$
+
+$C = \frac{1}{0.693 (1k + 2\cdot 100k)\cdot 1000}$
+
+$C = \frac{1}{0.693 (201000)\cdot 1000}$
+
+$C \approx 7.2,nF$
+
+Por lo tanto, se selecciona un valor comercial cercano (por ejemplo 6.8 nF o 8.2 nF) y luego se ajusta en simulación si se requiere más precisión.
+
+Verificación de la frecuencia en LTspice (método con N ciclos)
+
+Para verificar la frecuencia en la simulación se mide el tiempo que tarda en repetirse la señal. Si se observan $N$ ciclos dentro de un intervalo de tiempo $\Delta t$, la frecuencia se calcula como:
+
+$f = \frac{N}{\Delta t}$
+
+Ejemplo de verificación
+
+-Si en la gráfica de LTspice se observan 2 ciclos entre 6.5 ms y 9 ms:
+
+$\Delta t = 9,ms - 6.5,ms = 2.5,ms$
+
+Pasando a segundos:
+
+$\Delta t = 0.0025,s$
+
+Entonces la frecuencia es:
+
+$f = \frac{2}{0.0025} = 800,Hz$
+
+Este valor se compara con el valor teórico calculado y, si es necesario, se ajustan $R_A$, $R_B$ o $C$ para aproximarse a $1,kHz$.
 
 
 modos biestable https://www.youtube.com/watch?v=4EfFQS2afb0
