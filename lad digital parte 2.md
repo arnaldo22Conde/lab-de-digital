@@ -153,7 +153,40 @@ Esto confirma que el tiempo de activación del modo monoestable depende únicame
 ![Modo monoestable](https://github.com/user-attachments/assets/86eefa70-a8c9-473d-bc64-1d2d19b52d30)
 link https://www.build-electronic-circuits.com/circuit-calculator-conversion/555-timer-calculator/
 
+## B.Modo Biestable con Temporizador 555
+Introducción
 
+En este montaje se implementó el temporizador 555 en modo biestable. Este modo se caracteriza porque el circuito tiene dos estados estables: un estado alto y un estado bajo. La salida permanece en uno de estos estados hasta que una señal externa la cambie.
+
+Por esta razón se dice que el modo biestable permite almacenar información, ya que el circuito puede “recordar” si estaba encendido o apagado.
+
+-Por qué el circuito almacena información
+
+El temporizador 555 tiene internamente un flip-flop RS. Este elemento es el que permite guardar el estado de la salida.
+
+Cuando se presiona el pulsador S1, el pin TRIG recibe un nivel bajo y el flip-flop se activa, haciendo que la salida pase a nivel alto y el LED se encienda.
+
+Cuando se presiona el pulsador S2, el pin RESET recibe un nivel bajo, lo que desactiva el flip-flop y la salida pasa a nivel bajo, apagando el LED.
+
+Lo importante es que, cuando se sueltan los pulsadores, el circuito mantiene su estado, ya que el flip-flop interno conserva la última condición aplicada.
+
+Por qué se usan resistencias pull-up
+
+Las resistencias R1 y R2 mantienen los pines del 555 en estado alto cuando los pulsadores no están presionados. Esto evita que el circuito cambie de estado por ruido eléctrico o señales indeseadas.
+
+-Funcionamiento general
+
+El comportamiento del circuito es el siguiente:
+
+Presionar S1 → el LED se enciende y permanece encendido.
+
+Presionar S2 → el LED se apaga y permanece apagado.
+
+Si no se presiona ningún pulsador, el circuito mantiene su último estado.
+
+Esto demuestra que el temporizador 555 en modo biestable funciona como un sistema de memoria simple, capaz de almacenar un bit de información.
+
+![Modo monoestable](https://github.com/user-attachments/assets/95d075a0-c790-41c2-a150-649f574ab60c)
 
 
 modos biestable https://www.youtube.com/watch?v=4EfFQS2afb0
