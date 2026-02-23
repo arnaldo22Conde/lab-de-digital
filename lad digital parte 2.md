@@ -112,7 +112,7 @@ Esto confirma el valor obtenido en la simulación.
 Tiempo de activación del pulso
 
 ### A. Modo Monoestable con Temporizador 555
--El tiempo durante el cual la salida permanece activa está determinado por la constante de tiempo RC del circuito. Para el temporizador 555 en modo monoestable, el tiempo del pulso de salida se calcula mediante la expresión:
+- El tiempo durante el cual la salida permanece activa está determinado por la constante de tiempo RC del circuito. Para el temporizador 555 en modo monoestable, el tiempo del pulso de salida se calcula mediante la expresión:
 
 $T = 1.1 R C$
 
@@ -160,7 +160,7 @@ En este montaje se implementó el temporizador 555 en modo biestable. Este modo 
 
 Por esta razón se dice que el modo biestable permite almacenar información, ya que el circuito puede “recordar” si estaba encendido o apagado.
 
--Por qué el circuito almacena información
+- Por qué el circuito almacena información
 
 El temporizador 555 tiene internamente un flip-flop RS. Este elemento es el que permite guardar el estado de la salida.
 
@@ -174,7 +174,7 @@ Por qué se usan resistencias pull-up
 
 Las resistencias R1 y R2 mantienen los pines del 555 en estado alto cuando los pulsadores no están presionados. Esto evita que el circuito cambie de estado por ruido eléctrico o señales indeseadas.
 
--Funcionamiento general
+- Funcionamiento general
 
 El comportamiento del circuito es el siguiente:
 
@@ -190,11 +190,11 @@ Esto demuestra que el temporizador 555 en modo biestable funciona como un sistem
 
 
 ### C. Modo Astable con LM555 (1 kHz, 0–5 V)
--Introducción al montaje
+- Introducción al montaje
 
 En esta parte se implementó el temporizador LM555 en modo astable, el cual no tiene estados estables: la salida conmuta continuamente entre alto y bajo, generando una onda cuadrada. La frecuencia depende principalmente de los valores de dos resistencias y un capacitor.
 
--Ecuaciones de frecuencia (LM555 astable)
+- Ecuaciones de frecuencia (LM555 astable)
 
 Para el LM555 en modo astable, el período total se define como la suma del tiempo alto y el tiempo bajo:
 
@@ -218,7 +218,7 @@ Por lo tanto:
 
 $f = \frac{1}{0.693 (R_A + 2R_B) C}$
 
--Una forma equivalente (muy usada) es:
+- Una forma equivalente (muy usada) es:
 
 $f \approx \frac{1.44}{(R_A + 2R_B) C}$
 
@@ -228,7 +228,7 @@ Si se requiere una frecuencia de $f = 1,kHz$, se despeja el capacitor desde:
 
 $f = \frac{1}{0.693 (R_A + 2R_B) C}$
 
--Despejando:
+- Despejando:
 
 $C = \frac{1}{0.693 (R_A + 2R_B) f}$
 
@@ -244,7 +244,7 @@ $R_B \approx 100 R_A$
 
 Esto hace que $R_A$ influya muy poco y el duty se acerque a $50%$ (aunque en un 555 típico sin diodo nunca queda exactamente 50%).
 
--Ejemplo de diseño (1 kHz con 5 V)
+- Ejemplo de diseño (1 kHz con 5 V)
 
 Se toma un ejemplo con:
 
@@ -254,7 +254,7 @@ $R_B = 100,k\Omega$
 
 $f = 1000,Hz$
 
--Se calcula:
+- Se calcula:
 
 $C = \frac{1}{0.693 (R_A + 2R_B) f}$
 
@@ -274,7 +274,7 @@ $f = \frac{N}{\Delta t}$
 
 Ejemplo de verificación
 
--Si en la gráfica de LTspice se observan 2 ciclos entre 6.5 ms y 9 ms:
+- Si en la gráfica de LTspice se observan 2 ciclos entre 6.5 ms y 9 ms:
 
 $\Delta t = 9,ms - 6.5,ms = 2.5,ms$
 
@@ -291,7 +291,7 @@ Este valor se compara con el valor teórico calculado y, si es necesario, se aju
 
 
 # 3. Comparación de resultados: Astable con transistores vs Astable con LM555
--1) Diferencia en ecuaciones (modelo teórico)
+- 1) Diferencia en ecuaciones (modelo teórico)
 Astable con transistores (multivibrador)
 
 En el caso simétrico ($R_2=R_3=R$ y $C_1=C_2=C$):
@@ -322,7 +322,7 @@ $D = \frac{R_A + R_B}{R_A + 2R_B}$
 
 Interpretación: la frecuencia depende de una sola red RC, pero el duty queda condicionado por $R_A$ y $R_B$ (no queda exactamente 50% sin usar diodo u otra modificación).
 
--2) Señal de salida (amplitud y forma de onda)
+- 2) Señal de salida (amplitud y forma de onda)
 Transistores
 
 Salidas típicas en colectores: 0 a $V_{CC}$ (aprox).
@@ -339,7 +339,7 @@ La amplitud se aproxima a 0–$V_{CC}$ dependiendo del tipo de 555 y la carga (b
 
 En general es más fácil obtener una salida útil directa.
 
--3) Estabilidad y precisión de frecuencia
+- 3) Estabilidad y precisión de frecuencia
 Transistores
 
 La frecuencia puede variar más por:
@@ -364,7 +364,7 @@ descarga controlada por el transistor interno del pin 7
 
 Resultado: más estabilidad y facilidad para ajustar a un valor objetivo.
 
--4) Velocidad de reacción / conmutación
+- 4) Velocidad de reacción / conmutación
 Transistores
 
 La conmutación puede ser rápida, pero si el transistor entra en saturación profunda aparecen tiempos de almacenamiento de carga (puede ralentizar el apagado).
@@ -379,7 +379,7 @@ La conmutación es consistente y generalmente más rápida/estable que un montaj
 
 Conclusión práctica: para 1 kHz ambos funcionan bien, pero el 555 suele dar una respuesta más “controlada” y menos dependiente del transistor.
 
--5) Complejidad del circuito y facilidad de diseño
+- 5) Complejidad del circuito y facilidad de diseño
 Transistores
 
 Más componentes: 2 transistores + 2 capacitores + varias resistencias.
@@ -396,7 +396,7 @@ Diseño directo con fórmulas claras.
 
 Fácil de ajustar.
 
--6) Consumo y eficiencia
+- 6) Consumo y eficiencia
 Transistores
 
 Dependiendo del diseño, puede consumir más (corrientes por ramas y saturación).
