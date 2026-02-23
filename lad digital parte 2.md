@@ -108,6 +108,49 @@ https://www.youtube.com/watch?v=_n8JR62jyOw
 
 Esto confirma el valor obtenido en la simulación.
 
+## 2. Estudie el LM555 en sus tres modos de operación (monoestable, bistable, astable.) y realice la implementación de un oscilador astable con las mismas características con las que implementó el oscilador basado en transistores (frecuencia y voltaje de salida).
+Tiempo de activación del pulso
+
+-El tiempo durante el cual la salida permanece activa está determinado por la constante de tiempo RC del circuito. Para el temporizador 555 en modo monoestable, el tiempo del pulso de salida se calcula mediante la expresión:
+
+$T = 1.1 R C$
+
+Donde:
+
+$T$ es el tiempo de activación del pulso
+
+$R$ es la resistencia de temporización
+
+$C$ es el capacitor de temporización
+
+Selección de valores de resistencia y capacitor
+
+Para el montaje realizado se utilizaron los siguientes valores:
+
+$R = 1 , k\Omega$
+
+$C = 1 , \mu F$
+
+Sustituyendo en la ecuación del tiempo:
+
+$T = 1.1 (1000)(1 \times 10^{-6})$
+
+$T = 1.1 \times 10^{-3}$
+
+$T = 1.1 , ms$
+
+Por lo tanto, la salida permanece activa durante aproximadamente 1.1 milisegundos después de recibir el pulso de disparo.
+
+Resultado obtenido según la simulación
+
+Al simular el circuito en LTspice se observó que, al aplicar un pulso de disparo en la entrada TRIG, la salida del temporizador cambia a estado alto y se mantiene activa durante aproximadamente 1.1 ms, lo cual coincide con el valor calculado teóricamente.
+
+Esto confirma que el tiempo de activación del modo monoestable depende únicamente de los valores de la resistencia y el capacitor utilizados en el circuito.
+
+
+
+![Modo monoestable](https://github.com/user-attachments/assets/86eefa70-a8c9-473d-bc64-1d2d19b52d30)
+
 
 
 
